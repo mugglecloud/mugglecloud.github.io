@@ -1,0 +1,14 @@
+{
+  "name": "mugglecloud.github.io",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/mugglecloud/mugglecloud.github.io.git",
+  "author": "mugglecloud <mugglecloud@163.com>",
+  "license": "MIT",
+  "scripts": {
+    "download": "node ./tools/downloader.js"
+  },
+  "dependencies": {
+    "request": "^2.88.2"
+  }
+}
