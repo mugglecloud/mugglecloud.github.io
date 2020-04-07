@@ -11,10 +11,13 @@ function getUrl(num) {
 function writeFile(uri, filename) {
   return new Promise((resolve, reject) => {
     request(uri)
-      .on("error", reject)
+      .on("error", (err) => {
+        console.error("failed:", uri);
+        resolve(err);
+      })
       .pipe(fs.createWriteStream(filename))
       .on("finish", () => {
-        console.log("write file", filename, "success");
+        // console.log("write file", filename, "success");
         resolve();
       });
   });
