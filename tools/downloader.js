@@ -13,6 +13,7 @@ function writeFile(uri, filename) {
     request(uri)
       .on("error", (err) => {
         console.error("failed:", uri);
+        console.error(err);
         resolve(err);
       })
       .pipe(fs.createWriteStream(filename))
